@@ -2,7 +2,6 @@
 using namespace std;
 int main()
 {
-    char *s = "C++";
-    char a[20];
+    int *p = nullptr;
     return 0;
 }
