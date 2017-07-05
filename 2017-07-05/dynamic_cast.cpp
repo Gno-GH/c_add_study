@@ -34,7 +34,6 @@ int main()
     A a;
     bp = &b;
     ap = &a;
-    //RTTI dynamic_cast<T*> if not T* that return null
     if(bp=dynamic_cast<B*>(ap))
         bp->show();
     else 
