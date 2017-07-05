@@ -13,9 +13,18 @@ public :
     ~Anl(){ct--;}
     friend void couts<T>();
     friend void reports(Anl<T> &t);
+    template<class C,class D> friend void show(C &c,D &d);
 };
 template<class T>
 int Anl<T>::ct = 0;
+//非约束友元函数
+template<class C,class D> void show(C &c,D &d)
+{
+    cout<<"-----------------"<<endl;
+    cout<<c.item<<endl;
+    cout<<d.item<<endl;
+}
+//约束友元函数
     template<class T>
 void couts()
 {
@@ -38,5 +47,6 @@ int main()
     Anl<double> dou_1(1.1);
     Anl<double> dou_2(2.1);
     couts<double>();
+    show(int_1,dou_1);
     return 0;
 }
