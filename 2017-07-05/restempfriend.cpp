@@ -12,7 +12,6 @@ public :
     Anl(const T &i):item(i){ct++;}
     ~Anl(){ct--;}
     friend void couts<T>();
-    friend void reports(Anl<T> &t);
     template<class C,class D> friend void show(C &c,D &d);
 };
 template<class T>
@@ -23,6 +22,7 @@ template<class C,class D> void show(C &c,D &d)
     cout<<"-----------------"<<endl;
     cout<<c.item<<endl;
     cout<<d.item<<endl;
+    return ;
 }
 //约束友元函数
     template<class T>
@@ -31,11 +31,6 @@ void couts()
     cout<<"This is couts print:"<<endl;
     cout<<sizeof(Anl<T>)<<endl;
     cout<<Anl<T>::ct<<endl;
-}
-    template<class T>
-void reports(Anl<T> &t)
-{
-    cout<<t.item<<endl;
     return ;
 }
 int main()
@@ -43,10 +38,10 @@ int main()
     Anl<int> int_1(1);
     Anl<int> int_2(2);
     Anl<int> int_3(3);
-    couts<int>();
+    couts<int>();//约束友元
     Anl<double> dou_1(1.1);
     Anl<double> dou_2(2.1);
-    couts<double>();
-    show(int_1,dou_1);
+    couts<double>();//约束友元
+    show(int_1,dou_1);//非约束友元
     return 0;
 }
