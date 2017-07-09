@@ -32,5 +32,12 @@ int main()
     ostream_iterator<int,char> out_iter(cout," ");
     copy(ves.begin(),ves.end(),out_iter);
     cout<<endl;
+    cout<<"The first value is :"<<endl;
+    cout<<ves.front()<<endl;
+    cout<<"The last value is :"<<endl;
+    cout<<ves.back()<<endl;
+    cout<<"clear "<<endl;
+    ves.clear();
+    cout<<ves.size()<<endl;
     return 0;
 }
