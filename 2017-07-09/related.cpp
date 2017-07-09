@@ -20,7 +20,17 @@ int main()
     mp.insert(pair<int,string>(3,"666"));
     mp.insert(pair<int,string>(5,"555"));
     mp.insert(pair<int,string>(4,"444"));
-   // cout<<mp<<endl;
+    multimap<int,string>::iterator it;
+    cout<<"multimap print:"<<endl;
+    for(it=mp.begin();it!=mp.end();it++)
+        cout<<(*it).first<<"    "<<(*it).second<<endl;
+    //count key value is 3 
+    cout<<"the key is 3:"<<endl;
+    cout<<mp.count(3)<<endl;
+    //don't recover
+    cout<<"map[3]:"<<endl;
+    map<int,string> ma(mp.begin(),mp.end()); 
+    cout<<ma[3]<<endl;
     return 0;
 }
 
