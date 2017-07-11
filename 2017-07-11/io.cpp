@@ -1,4 +1,5 @@
 #include <iostream>
+#include<fstream>
 using namespace std;
 int main()
 {
@@ -13,5 +14,20 @@ int main()
     cout<<"enter:"<<endl;
     cout<<"empty:"<<ends<<"empty"<<endl;
     cout<<"fulsh:"<<flush<<endl;
+    cin.tie(&cout);
+    int i;
+    cin>>i;
+    cout<<endl;
+    cin.tie(nullptr);
+    ifstream in("./log",ifstream::in);
+    ofstream out("./logr",ofstream::out);
+    string s;
+    while(in>>s)
+    {
+        cout<<s<<endl;
+        out<<s<<endl;
+    }
+    in.close();
+    out.close();
     return 0;
 }
