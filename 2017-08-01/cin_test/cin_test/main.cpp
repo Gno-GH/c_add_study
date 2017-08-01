@@ -12,12 +12,21 @@ void test()
 {
     char c = cin.get();
     cout<<"cin_get() c :"<<c<<endl;
-    cin.sync();
+    char buf[1024];
+    cin.ignore();
+    cin.get(buf, 1024);
+    cout<<buf<<endl;
+    cin.ignore();
+    cin.getline(buf,1024);
+    cout<<buf<<endl;
+    //cin.sync();
+    cin.ignore();
     cin.get(c);
-//    while('\n'==c)
-//        cin.get(c);
     cout<<"cin_get(c) :"<<c<<endl;
     cout<<cin.fill('a')<<endl;
+    cout<<"------------"<<endl;
+    cout<<cin.peek()<<endl;//窥探
+    cin.putback(c);//放回去
 }
 int main(int argc, const char * argv[]) {
     test();
