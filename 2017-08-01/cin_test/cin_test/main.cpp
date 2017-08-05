@@ -29,6 +29,15 @@ void test()
     cin.putback(c);//放回去
 }
 int main(int argc, const char * argv[]) {
-    test();
+   // test();
+    char buf[1024];
+    cin.get(buf,1024);
+    cout<<cin.peek()<<endl;
+    cin.get(buf,1024);
+    cout<<buf<<endl;
+    cout<<cin.peek()<<endl;
+    cin.get(buf,1024);
+    cout<<buf<<endl;
+    cout<<cin.peek()<<endl;
     return 0;
 }
